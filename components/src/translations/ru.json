@@ -1,0 +1,33 @@
+{
+    "newMarker": {
+        "message": "Новый маркер в ",
+        "description1": " в ",
+        "description2": " метрах"
+    },
+    "more info": "больше информации",
+    "delete": "удалить",
+    "close": "закрыть",
+    "edit": "редактировать",
+    "error": "Ошибка",
+    "author": "Автор",
+    "public": "Группа",
+    "success": "Успех",
+    "markerdelete": "Удаление маркера",
+    "deleteconfirm": "Вы уверены, что хотите удалить маркер?",
+    "deletecancel": "Удаление отменено",
+    "cancel": "Отмена",
+    "publiclist": "Список групп",
+    "createpublic": "Создать группу",
+    "createmarker": "Создать маркер",
+    "myprofile": "Мой профиль",
+    "signout": "Выход",
+    "pickroll": "Выбрать картинку из галереи",
+    "takecamera": "Сделать фотографию",
+    "radiusnot": "Уведомление в радиусе",
+    "polygonnot": "Уведомление в полигоне",
+    "notrange": "Диапазон уведомления(в метрах)",
+    "description": "Описание",
+    "name": "Имя",
+    "nopublics": "У вас нет групп с правами admin или owner",
+    "editmarker": "Редактировать маркер"
+}

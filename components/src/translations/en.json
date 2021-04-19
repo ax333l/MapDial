@@ -1,0 +1,33 @@
+{
+    "newMarker": {
+        "message": "New marker in ",
+        "description1": " in ",
+        "description2": " meters away"
+    },
+    "more info": "more info",
+    "delete": "delete",
+    "close": "close",
+    "edit": "edit",
+    "error": "Error",
+    "author": "Author",
+    "public": "Public",
+    "success": "Success",
+    "markerdelete": "Marker delete",
+    "deleteconfirm": "Are you sure to delete the marker?",
+    "deletecancel": "Delete cancelled",
+    "cancel": "Cancel",
+    "publiclist": "Public list",
+    "createpublic": "Create public",
+    "createmarker": "Create marker",
+    "myprofile": "My profile",
+    "signout": "Sign out",
+    "pickroll": "Pick an image from camera roll",
+    "takecamera": "Take picture from camera",
+    "radiusnot": "radius notification",
+    "polygonnot": "polygon notification",
+    "notrange": "Notification range(meters)",
+    "description": "Description",
+    "name": "Name",
+    "nopublics": "You have no publics with admin permissions",
+    "editmarker": "Edit Marker"
+}

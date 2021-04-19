@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1074182331448",
+    "firebase_url": "https://mapdial-bfee0.firebaseio.com",
+    "project_id": "mapdial-bfee0",
+    "storage_bucket": "mapdial-bfee0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074182331448:android:49b5882484ca8792975acd",
+        "android_client_info": {
+          "package_name": "mapdial.apk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074182331448-54dfvjbfmqreeq7cluk3nbco33tpocvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoacO0ivmB5sOnOgBqIa-CtktwhFsrCWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074182331448-54dfvjbfmqreeq7cluk3nbco33tpocvf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

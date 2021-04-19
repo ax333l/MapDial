@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "MapDial",
+    "slug": "mapdialfront",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/iconios.png",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "mapdial.apk",
+      "config": {
+        "googleMapsApiKey": "AIzaSyDoFGPg4Pj4D8Bwo2DJWOD0-HdNgv-VPuI"
+      },
+      "infoPlist": {
+        "UIBackgroundModes": ["location"]
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "mapdial.apk",
+      "useNextNotificationsApi": true,
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC6ucpFGZH7keK7oOEhfuLyNn2_daBKIwo"
+        }
+      }
+    },
+    "description": ""
+  }
+}
