@@ -88,26 +88,31 @@ const createMapScreen = ({ route, navigation }) => {
 
     return (
         <ScrollView style={{flex: 1, marginTop: 20}}>
+
+            <Text style={{ fontSize: 40, marginTop: 15, textAlign: 'center', marginBottom: 10, color: "rgba(143, 143, 143, 0.75);" }}>Create map</Text>
+
             <TextInput
                 placeholder="Name"
                 placeholderTextColor="#666"
-                style={{margin: 10}}
+                style={{margin: 10, marginBottom: 0, padding: 10, borderTopLeftRadius: 30, borderTopRightRadius: 30}}
                 onChangeText={(text) => setName(text)}
                 editable
                 multiline
+                underlineColorAndroid="transparent"
             >
             </TextInput>
             <TextInput
                 placeholder="Description"
                 placeholderTextColor="#666"
-                style={{margin: 10}}
+                style={{margin: 10, marginTop: 0, paddingTop: 10, paddingBottom: 30}}
                 onChangeText={(text) => setDescription(text)}
                 editable
                 multiline
+                underlineColorAndroid="transparent"
             >
             </TextInput>
             <View style={{flex: 1, margin: 10, alignItems: 'center'}}>
-                <Text style={{color: '#05375a', fontSize: 18}}>
+                <Text style={{color: 'rgba(143, 143, 143, 0.75);', fontSize: 18}}>
                     Select scopes
                 </Text>
             </View>
@@ -129,16 +134,17 @@ const createMapScreen = ({ route, navigation }) => {
                     justifyContent: 'flex-start'
                 }}
                 onChangeItem={item => setSelectedItems(item)}
+                style = {{ marginLeft: 10, marginRight: 10, borderRadius: 50 }}
             />
 
             <TouchableOpacity style={{alignItems: 'center', margin: 40}}
             onPress={() => handleCreate()}
             >
             <LinearGradient
-                colors={['#1F1381', '#2819A3']}
-                style={{height: 50, justifyContent: 'center', alignItems: 'center', borderRadius: 20, width: "20%"}}
+                colors={['#554BA7', '#554BA7']}
+                style={{height: 50, justifyContent: 'center', alignItems: 'center', borderRadius: 50, width: 100}}
             >
-                <Text style={{color: '#FFF', fontSize: 18, fontWeight: 'bold'}}>Create</Text>
+                <Text style={{color: '#FFF', fontSize: 18}}>Create</Text>
             </LinearGradient>
             </TouchableOpacity>
         </ScrollView>

@@ -224,19 +224,23 @@ const mapComponentsScreen = ({ route, navigation }) => {
     }
 
     return (
-        <ScrollView style={{flex: 1}}>
+        <ScrollView style={{flex: 1, paddingTop: 20, paddingBottom: 20}}>
             {data.components.map((component, i) => {
                 return(
-                    <View style={{flex: 1, flexDirection: 'row', margin: 20, justifyContent: 'center', borderWidth: 1, borderColor: 'rgba(100,100,200,0.6)'}} key={component._id.toString()}>
+                    <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.05)', marginBottom: 10, flexDirection: 'row', borderColor: 'rgba(143, 143, 143, 0.75);', borderWidth: 0, borderRadius: 50, padding: 10, paddingLeft: 10, margin: 10}} key={component._id.toString()}>
                         <TouchableOpacity
-                            style={{width: '80%', alignItems: "center", backgroundColor: "#DDD", paddingHorizontal: 10, borderEndWidth: 3, borderEndColor: 'rgba(100,100,200,0.6)' }}
+                            style={{width: '80%', alignItems: "center", paddingHorizontal: 10, borderEndWidth: 0, borderEndColor: 'rgba(100,100,200,0.6)' }}
                             onPress={() => {}}
                             key={component._id.toString()}
                         >
-                            <Text style={{fontSize: 20, fontWeight: 'bold', borderBottomWidth: 1, borderBottomColor: 'rgba(100,100,200,0.6)'}}>{component.variables.title}</Text>
-                            <Text>{component.variables.description}</Text>
+                            <Text style={{flex: 1, flexDirection:'row', color: "rgba(68, 68, 68, 1)", fontSize: 20, textAlign: 'center', justifyContent: 'center', alignContent: 'center', padding: 10, flexWrap: 'wrap',flexShrink: 1}}>{component.variables.title}</Text>
+
+                            { component.variables.description ? (
+                       <Text>{component.variables.description}</Text>
+                   ) : null}
+
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: '10%', backgroundColor: '#29C584', alignItems: 'center', justifyContent: 'center', borderEndWidth: 1, borderEndColor: 'rgba(100,100,200,0.6)'}}
+                        <TouchableOpacity style={{ width: '10%', alignItems: 'center', justifyContent: 'center', borderEndWidth: 0, borderEndColor: 'rgba(100,100,200,0.6)'}}
                         onPress={() => {
                             const DATA = {
                                 ...component.variables,
@@ -253,7 +257,7 @@ const mapComponentsScreen = ({ route, navigation }) => {
                                 size={20}
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: '10%', backgroundColor: '#A11616', alignItems: 'center', justifyContent: 'center', borderEndWidth: 1, borderEndColor: 'rgba(100,100,200,0.6)'}}
+                        <TouchableOpacity style={{ width: '10%', alignItems: 'center', justifyContent: 'center', borderEndWidth: 0, borderEndColor: 'rgba(100,100,200,0.6)'}}
                         onPress={() => {
                             removeComponent(component._id.toString(),i)
                         }}

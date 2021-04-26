@@ -12,35 +12,38 @@ import SearchInput, { createFilter } from 'react-native-search-filter';
 const myMapsScreen = ({ route, navigation }) => {
     const element = (map) => {
         return (
-            <View style={{flex: 1, flexDirection: 'row', margin: 20, justifyContent: 'center', borderWidth: 1, borderColor: 'rgba(100,100,200,0.6)'}} key={map._id.toString()}>
+            <View style={{flex: 1, flexDirection: 'row', margin: 10, justifyContent: 'center', justifyContent: 'center', backgroundColor: '#E2E2E2', borderRadius: 30, padding: 10}} key={map._id.toString()}>
                 <TouchableOpacity
-                    style={{width: '80%', alignItems: "center", backgroundColor: "#DDD", paddingHorizontal: 10, borderEndWidth: 3, borderEndColor: 'rgba(100,100,200,0.6)' }}
+                    style={{width: '70%', alignItems: "center", paddingHorizontal: 10, alignItems: 'center', borderBottomStartRadius: 30, borderTopStartRadius: 30 }}
                     onPress={() => navigation.navigate('customMapScreen', {
                         user: user, map: map._id.toString(), token: userToken
                     })}
                     key={map._id.toString()}
                 >
-                    <Text style={{fontSize: 20, fontWeight: 'bold', borderBottomWidth: 1, borderBottomColor: 'rgba(100,100,200,0.6)'}}>{map.name}</Text>
-                    <Text>{map.description}</Text>
+                    <Text style={{flex: 1, flexDirection:'row', color: "rgba(68, 68, 68, 1)", fontSize: 20, textAlign: 'center', justifyContent: 'center', alignContent: 'center', padding: 10, flexWrap: 'wrap',flexShrink: 1}}>{map.name}</Text>
+                   { map.description ? (
+                       <Text>{map.description}</Text>
+                   ) : null}
                 </TouchableOpacity>
-                <TouchableOpacity style={{ width: '10%', backgroundColor: '#29C584', alignItems: 'center', justifyContent: 'center', borderEndWidth: 1, borderEndColor: 'rgba(100,100,200,0.6)'}}
-                onPress={() => { 
-                    navigation.navigate('mapSettingsScreen', {map: map._id})}
-                }
-                >
-                    <Feather 
-                        name="settings"
-                        color={'rgba(68, 68, 68, 1)'}
-                        size={20}
-                    />
-                </TouchableOpacity>
-                <TouchableOpacity style={{ width: '10%', backgroundColor: '#29C584', alignItems: 'center', justifyContent: 'center'}}
+                
+                <TouchableOpacity style={{ width: '15%', alignItems: 'center', justifyContent: 'center'}}
                 onPress={() => { 
                     navigation.navigate('mapComponentsScreen', {map: map._id})}
                 }
                 >
                     <Icon2 
                         name="map-marker-alt"
+                        color={'rgba(68, 68, 68, 1)'}
+                        size={20}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity style={{ width: '15%', alignItems: 'center', justifyContent: 'center', borderBottomEndRadius: 30, borderTopEndRadius: 30}}
+                onPress={() => { 
+                    navigation.navigate('mapSettingsScreen', {map: map._id})}
+                }
+                >
+                    <Feather 
+                        name="settings"
                         color={'rgba(68, 68, 68, 1)'}
                         size={20}
                     />
@@ -120,8 +123,8 @@ const myMapsScreen = ({ route, navigation }) => {
         refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
-            <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.05)', margin: 30, marginBottom: 10, flexDirection: 'row', borderColor: 'rgba(100,100,200,0.6)', borderWidth: 3}}>
-                <Icon name={'search'} size={30} color={'rgba(0,0,0,0.5)'}></Icon>
+            <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.05)', marginBottom: 10, flexDirection: 'row', borderColor: 'rgba(143, 143, 143, 0.75);', borderWidth: 0, borderRadius: 50, padding: 10, paddingLeft: 10, margin: 10, marginTop: 35}}>
+                <Feather name={'search'} size={30} style={{ marginRight: 7 }} color={'rgba(143, 143, 143, 0.75);'}></Feather>
                 <SearchInput 
                     onChangeText={(term) => { setFilter(data.maps.filter(createFilter(term, KEYS_TO_FILTERS))) }}
                     placeholder="Type a message to search"

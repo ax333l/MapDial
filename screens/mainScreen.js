@@ -3,6 +3,7 @@ import { View, Text, Button, TouchableOpacity, ScrollView, Alert, RefreshControl
 import config from '../config/settings.json'
 import io from 'socket.io-client';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather'
 import AsyncStorage from '@react-native-community/async-storage';
 import SearchInput, { createFilter } from 'react-native-search-filter';
 import * as TaskManager from 'expo-task-manager';
@@ -166,19 +167,21 @@ const mainScreen = ({ route, navigation }) => {
 
     const element = (map) => {
         return (
-            <View style={{flex: 1, flexDirection: 'row', margin: 20, justifyContent: 'center', borderWidth: 1, borderColor: 'rgba(100,100,200,0.6)'}} key={map._id.toString()}>
+            <View style={{flex: 1, flexDirection: 'row', margin: 10, justifyContent: 'center', backgroundColor: '#E2E2E2', borderRadius: 30, padding: 10, alignItems: 'center'}} key={map._id.toString()}>
                 <TouchableOpacity
-                    style={{width: '80%', alignItems: "center", backgroundColor: "#DDD", paddingHorizontal: 10, borderEndWidth: 3, borderEndColor: 'rgba(100,100,200,0.6)' }}
+                    style={{width: '80%', alignItems: "center", paddingHorizontal: 10 }}
                     onPress={() => navigation.navigate('customMapScreen', {
                         user: user, map: map._id.toString(), token: userToken
                     })}
                     key={map._id.toString()}
                 >
-                    <Text style={{fontSize: 20, fontWeight: 'bold', borderBottomWidth: 1, borderBottomColor: 'rgba(100,100,200,0.6)'}}>{map.name}</Text>
-                    <Text>{map.description}</Text>
+                    <Text style={{color: "rgba(68, 68, 68, 1)", fontSize: 20, textAlign: 'center', justifyContent: 'center', alignContent: 'center', padding: 10}}>{map.name}</Text>
+                    { map.description ? (
+                       <Text style={{ color: "rgba(68, 68, 68, 1)" }}>{map.description}</Text>
+                   ) : null}
                 </TouchableOpacity>
                 { !map.users.includes(user.name) ? (
-                <TouchableOpacity style={{ width: '20%', backgroundColor: '#29C584', alignItems: 'center', justifyContent: 'center'}}
+                <TouchableOpacity style={{height: 55, width: 70, padding: 15, backgroundColor: '#4E904C', alignItems: 'center', justifyContent: 'center', borderRadius: 50}}
                 onPress={() => {
                     let scopes = ''
                     map.scope.forEach(scope => {
@@ -201,7 +204,7 @@ const mainScreen = ({ route, navigation }) => {
                     <Text style={{color: '#FFF'}}>Join</Text>
                 </TouchableOpacity>
                 ) : (
-                    <TouchableOpacity style={{ width: '20%', backgroundColor: '#792F3E', alignItems: 'center', justifyContent: 'center'}}
+                    <TouchableOpacity style={{width: 70, height: 55, padding: 15, backgroundColor: '#904C5A', alignItems: 'center', justifyContent: 'center', borderRadius: 50}}
                 onPress={() => {
                     let scopes = ''
                     map.scope.forEach(scope => {
@@ -250,11 +253,11 @@ const mainScreen = ({ route, navigation }) => {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
         >
-            <View style={{alignItems: 'center', marginTop: '10%', backgroundColor: '#DDD'}}>
-                <TouchableOpacity onPress={() => signOut()}><Text>Sign Out</Text></TouchableOpacity>
+            <View style={{alignItems: 'center', marginTop: '10%'}}>
+                <TouchableOpacity onPress={() => signOut()}><Text style={{color: '#FFF',  backgroundColor: '#904C5A', width: 100, padding: 15, alignItems: "center", justifyContent: 'center', textAlign: 'center', borderRadius: 50}}>Sign Out</Text></TouchableOpacity>
             </View>
-            <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.05)', margin: 30, marginTop: 20, marginBottom: 10, flexDirection: 'row', borderColor: 'rgba(100,100,200,0.6)', borderWidth: 3}}>
-                <Icon name={'search'} size={30} color={'rgba(0,0,0,0.5)'}></Icon>
+            <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.05)', marginBottom: 10, flexDirection: 'row', borderColor: 'rgba(143, 143, 143, 0.75);', borderWidth: 0, borderRadius: 50, padding: 10, paddingLeft: 10, margin: 10, marginTop: 20}}>
+            <Feather name={'search'} size={30} style={{ marginRight: 7 }} color={'rgba(143, 143, 143, 0.75);'}></Feather>
                 <SearchInput 
                     onChangeText={(term) => { setFilter(data.maps.filter(createFilter(term, KEYS_TO_FILTERS))) }}
                     placeholder="Type a message to search"
